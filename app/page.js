@@ -33,32 +33,38 @@ export default function Home() {
         <meta name="description" content="Create flashcard from your text" />
       </Head>
 
+
+      
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Flashcard SaaS
           </Typography>
           <SignedOut>
-            <Button color="inherit">Login</Button>
-            <Button color="inherit">Sign Up</Button>
+            <Button color="inherit" href="/sign-in">Login</Button>
+            <Button color="inherit" href="/sign-up">Sign Up</Button>
           </SignedOut>
         </Toolbar>
       </AppBar>
+
+
 
       <Box sx={{ textAlign: "center", my: 4 }}>
         <Typography variant="h2" gutterBottom>
           Welcome to Flashcard SaaS
         </Typography>
         <Typography variant="h5" gutterBottom>
-          The easiest way to make flashcards from your text
+          Make Flashcards using the power of AI!
         </Typography>
-        <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+        <Button variant="contained" color="primary" sx={{ mt: 2, mr: 2 }}>
           Get Started
         </Button>
         <Button variant="outlined" color="primary" sx={{mt: 2}}>
           Learn More
         </Button>
       </Box>
+
+
 
       <Box sx={{ my: 6 }}>
         <Typography variant="h4" components="h2" gutterBottom>
@@ -94,8 +100,9 @@ export default function Home() {
       </Box>
 
 
+
       <Box sx={{ my: 6, textAlign: "center" }}>
-        <Typography variant="h4">Pricing</Typography>
+        <Typography variant="h4" sx={{mb: 3}}>Pricing</Typography>
         <Grid container spacing={4}>
 
           <Grid item xs={12} md={6}>
@@ -127,7 +134,7 @@ export default function Home() {
                 Unlimited flashcards and storage with priority support.
               </Typography>
               <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-                Get Basic
+                Get Pro
               </Button>
             </Box>
           </Grid>
