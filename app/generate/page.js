@@ -1,5 +1,6 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
+import {db} from "@/firebase";
 import { useRouter } from "next/navigation";
 import { doc, collection, getDoc, writeBatch } from "firebase/firestore";
 import { useState } from "react";
@@ -20,7 +21,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-//import { db } from "../firebase";
 
 export default function Generate() {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -32,14 +32,20 @@ export default function Generate() {
   const router = useRouter(); //To route between pages 
 
   const handleSubmit = async () => {
-    fetch("api/generate", {
-      method: "POST",
-      body: text,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setFlashcards(data);
+    try {
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        body: text,
       });
+  
+      const responseText = await res.text(); // Get response as text for debugging
+      console.log("Response text:", responseText); // Log it for inspection
+  
+      const data = JSON.parse(responseText); // Parse JSON
+      setFlashcards(data);
+    } catch (error) {
+      console.error("Error parsing response:", error);
+    }
   };
 
   const handleCardClick = (id) => {
@@ -57,6 +63,10 @@ export default function Generate() {
   const saveFlashcards = async () => {
     if (!name) {
       alert("Please enter a name.");
+      return;
+    }
+    if (!user || !user.id) {
+      alert("User is not authenticated.");
       return;
     }
     const batch = writeBatch(db);

@@ -1,5 +1,8 @@
+'use client';
+
+
 import getStripe from "@/utils/get-stripe";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, SignOutButton } from "@clerk/nextjs";
 import { Typography } from "@mui/material";
 import { Button, Container, Box, AppBar, Toolbar, Grid } from "@mui/material";
 import Head from "next/head";
@@ -8,12 +11,17 @@ import Head from "next/head";
 export default function Home() {
 
   const handleSubmit = async () => {
-    const checkoutSession = await fetch('/api/checkout_sessions', {
+    const checkoutSession = await fetch('/api/checkout_session', {
       method: 'POST',
       headers: { origin: 'http://localhost:3000' },
     })
     const checkoutSessionJson = await checkoutSession.json()
   
+    if (checkoutSession.statusCode == 500){
+      console.log(checkoutSession.message)
+      return
+    }
+
     const stripe = await getStripe()
     const {error} = await stripe.redirectToCheckout({
       sessionId: checkoutSessionJson.id,
@@ -23,8 +31,6 @@ export default function Home() {
       console.warn(error.message)
     }
   }
-
-
 
   return (
     <Container maxWidth="lg">
@@ -40,10 +46,18 @@ export default function Home() {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Flashcard SaaS
           </Typography>
+          {/* Show login and sign-up buttons when signed out */}
           <SignedOut>
             <Button color="inherit" href="/sign-in">Login</Button>
             <Button color="inherit" href="/sign-up">Sign Up</Button>
           </SignedOut>
+
+          {/* Show logout button when signed in */}
+          <SignedIn>
+            <SignOutButton>
+              <Button color="inherit">Logout</Button>
+            </SignOutButton>
+          </SignedIn>
         </Toolbar>
       </AppBar>
 
@@ -58,9 +72,6 @@ export default function Home() {
         </Typography>
         <Button variant="contained" color="primary" sx={{ mt: 2, mr: 2 }}>
           Get Started
-        </Button>
-        <Button variant="outlined" color="primary" sx={{mt: 2}}>
-          Learn More
         </Button>
       </Box>
 
@@ -111,7 +122,7 @@ export default function Home() {
                 Basic
               </Typography>
               <Typography variant="h6" gutterBottom>
-                $5 / month
+                $0 / month 
               </Typography>
               <Typography variant="body1">
                 Access to basic flashcards and limited storage.
@@ -128,13 +139,17 @@ export default function Home() {
                 Pro
               </Typography>
               <Typography variant="h6" gutterBottom>
-                $10 / month
+                $2.99 / month
               </Typography>
               <Typography variant="body1">
                 Unlimited flashcards and storage with priority support.
               </Typography>
-              <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-                Get Pro
+              <Button 
+              variant="contained" 
+              color="primary" 
+              sx={{ mt: 2 }} 
+              onClick={handleSubmit}>
+                Coming soon...
               </Button>
             </Box>
           </Grid>
