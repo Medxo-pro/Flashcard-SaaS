@@ -4,10 +4,31 @@ import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
   return (
-    <Container maxWidth="100vw">
-      <AppBar position="static">
+
+
+    <Container maxWidth="100vw"
+    sx={{
+      backgroundImage: 'url(background1.jpg)', // Add your background image URL
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh', // Ensure the container takes up full viewport height
+      py: 4, // Add padding for spacing
+    }}>
+
+<Box
+        sx={{
+          borderRadius: 2, // Adjust the border radius as needed
+          overflow: 'hidden', // Ensure the rounded corners are applied correctly
+          backgroundColor: 'rgba(135, 62, 113, 0.1)', // Semi-transparent background
+          backdropFilter: 'blur(10px)', // Optional: adds a blur effect to the background
+          boxShadow: 'none', // Remove box shadow if desired
+          position: 'relative',
+        }}
+      >
+      <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography className="professional-text-title" 
+            sx={{ fontSize: { xs: '2rem', sm: '3rem' }, flexGrow: 1 }}>
             Flashcard SaaS
           </Typography>
           <Button color="inherit">
@@ -18,6 +39,7 @@ export default function SignUpPage() {
           </Button>
         </Toolbar>
       </AppBar>
+      </Box>
 
       <Box
         display="flex"
@@ -26,7 +48,7 @@ export default function SignUpPage() {
         alignItems="center"
         //height="100vh"
       >
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom sx={{mt: 5, mb: 5}} className="professional-text-subtitle">
           Sign Up
         </Typography>
         <SignUp />

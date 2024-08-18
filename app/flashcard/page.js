@@ -53,11 +53,27 @@ export default function Flashcard() {
   }
 
   return (
+
+
+    <Container maxWidth="100vw"
+    sx={{
+      backgroundImage: 'url(background1.jpg)', // Add your background image URL
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh', // Ensure the container takes up full viewport height
+      py: 4, // Add padding for spacing
+    }}>
     <Container maxWidth="100vw">
       <Grid container spacing={3} sx={{ mt: 4 }}>
             {flashcards.map((flashcard, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
+                <Card
+                  sx={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Semi-transparent background
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  // Subtle shadow
+                    borderRadius: 2,  // Rounded borders
+                  }}
+                >
                   <CardActionArea
                     onClick={() => {
                       handleCardClick(index)
@@ -94,7 +110,10 @@ export default function Flashcard() {
 
                       '& > div div:nth-of-type(2)':{
                       transform: 'rotateY(180deg)'
-                      }
+                      }, 
+                      backgroundColor: 'rgba(135, 62, 113, 0.1)', // Semi-transparent white
+                      borderRadius: 2, // Rounded borders
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Subtle shadow
                     }}
                     
                     >
@@ -118,6 +137,7 @@ export default function Flashcard() {
             ))}
 
       </Grid>
+    </Container>
     </Container>
   );
 }

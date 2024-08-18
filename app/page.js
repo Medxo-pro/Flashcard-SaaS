@@ -34,6 +34,8 @@ export default function Home() {
     }
   }
 
+  
+
   return (
     <Container maxWidth="100vw"
     sx={{
@@ -104,6 +106,22 @@ export default function Home() {
         href="/generate"
           >
           Get Started
+        </Button>
+        <Button 
+        variant="contained" 
+        color="primary" 
+        className="button glowing-border"
+        sx={{
+          mt: 2,
+          mr: 2,
+          fontSize: '2em', // Ensure this matches the CSS font-size
+          backgroundColor: 'transparent', // Override default background color
+          border: '2px solid #fff', // Match the CSS border
+          color: '#fff', // Match the CSS text color
+        }}    
+        href="/flashcards"
+          >
+          Saved Flashcards
         </Button>
       </Box>
 
