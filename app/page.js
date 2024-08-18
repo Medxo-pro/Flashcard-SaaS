@@ -96,13 +96,16 @@ export default function Home() {
         color="primary" 
         className="button glowing-border"
         sx={{
-          mt: 2,
-          mr: 2,
-          fontSize: '2em', // Ensure this matches the CSS font-size
-          backgroundColor: 'transparent', // Override default background color
-          border: '2px solid #fff', // Match the CSS border
-          color: '#fff', // Match the CSS text color
-        }}    
+          backgroundColor: '#8A7D72',
+          borderRadius: '30px',
+          padding: '10px 20px',
+          textTransform: 'none',
+          '&:hover': {
+            backgroundColor: '#705E52',
+          },
+          mr: 3,
+          fontSize: '2em',
+        }}
         href="/generate"
           >
           Get Started
@@ -112,13 +115,16 @@ export default function Home() {
         color="primary" 
         className="button glowing-border"
         sx={{
-          mt: 2,
-          mr: 2,
-          fontSize: '2em', // Ensure this matches the CSS font-size
-          backgroundColor: 'transparent', // Override default background color
-          border: '2px solid #fff', // Match the CSS border
-          color: '#fff', // Match the CSS text color
-        }}    
+          backgroundColor: '#8A7D72',
+          borderRadius: '30px',
+          padding: '10px 20px',
+          textTransform: 'none',
+          '&:hover': {
+            backgroundColor: '#705E52',
+          },
+          fontSize: '2em',
+        }} 
+        
         href="/flashcards"
           >
           Saved Flashcards
@@ -189,12 +195,16 @@ export default function Home() {
               color="primary" 
               className="button-feedback glowing-border-feedback"
               sx={{
-              mt: 2,
-              fontSize: '1em', // Ensure this matches the CSS font-size
-              backgroundColor: 'transparent', // Override default background color
-              border: '2px solid #fff', // Match the CSS border
-              color: '#fff', // Match the CSS text color
-              }} >
+                backgroundColor: '#8A7D72',
+                borderRadius: '30px',
+                padding: '10px 20px',
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#705E52',
+                },
+                fontSize: '2em',
+                mt: 2
+              }}  >
                 Get Basic
               </Button>
             </Box>
@@ -222,12 +232,16 @@ export default function Home() {
               onClick={handleSubmit}
               className="button-feedback glowing-border-feedback"
               sx={{
-              mt: 2,
-              fontSize: '1em', // Ensure this matches the CSS font-size
-              backgroundColor: 'transparent', // Override default background color
-              border: '2px solid #fff', // Match the CSS border
-              color: '#fff', // Match the CSS text color
-              }}
+                backgroundColor: '#8A7D72',
+                borderRadius: '30px',
+                padding: '10px 20px',
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#705E52',
+                },
+                fontSize: '2em',
+                mt: 2
+              }} 
               
               >
                 Get it now for free!

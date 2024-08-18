@@ -160,7 +160,16 @@ export default function Generate() {
             variant="contained"
             color="primary"
             onClick={handleSubmit}
-            sx={{ mt: 2 }}
+            sx={{
+              backgroundColor: '#8A7D72',
+              borderRadius: '30px',
+              padding: '10px 20px',
+              textTransform: 'none',
+              '&:hover': {
+                backgroundColor: '#705E52',
+              },
+              mt:2
+            }} 
             className="button glowing-border"
           >
             Generate
@@ -250,13 +259,17 @@ export default function Generate() {
             color = 'secondary' 
             onClick={handleOpen}
             className="button-feedback glowing-border-feedback"
-              sx={{
-              mt: 2,
-              fontSize: '1em', // Ensure this matches the CSS font-size
-              backgroundColor: 'transparent', // Override default background color
-              border: '2px solid #fff', // Match the CSS border
-              color: '#fff', // Match the CSS text color
-              }}
+            sx={{
+              backgroundColor: '#8A7D72',
+              borderRadius: '30px',
+              padding: '10px 20px',
+              textTransform: 'none',
+              '&:hover': {
+                backgroundColor: '#705E52',
+              },
+              fontSize: '2em',
+              mt:2
+            }} 
             >
               Save 
             </Button>
