@@ -104,7 +104,7 @@ export default function Home() {
             backgroundColor: '#705E52',
           },
           mr: 3,
-          fontSize: '2em',
+          fontSize: '1em',
         }}
         href="/generate"
           >
@@ -122,7 +122,7 @@ export default function Home() {
           '&:hover': {
             backgroundColor: '#705E52',
           },
-          fontSize: '2em',
+          fontSize: '1em',
         }} 
         
         href="/flashcards"
@@ -202,7 +202,7 @@ export default function Home() {
                 '&:hover': {
                   backgroundColor: '#705E52',
                 },
-                fontSize: '2em',
+                fontSize: '1em',
                 mt: 2
               }}  >
                 Get Basic
@@ -239,7 +239,7 @@ export default function Home() {
                 '&:hover': {
                   backgroundColor: '#705E52',
                 },
-                fontSize: '2em',
+                fontSize: '1em',
                 mt: 2
               }} 
               

@@ -168,7 +168,8 @@ export default function Generate() {
               '&:hover': {
                 backgroundColor: '#705E52',
               },
-              mt:2
+              mt:2,
+              fontSize: '1em',
             }} 
             className="button glowing-border"
           >
