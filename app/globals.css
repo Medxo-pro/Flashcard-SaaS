@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -52,7 +55,7 @@
       left: -5px;
       right: -5px;
       bottom: -5px;
-      background: linear-gradient(90deg, rgb(111, 0, 255), rgb(13, 30, 100), rgb(59, 127, 146));
+      background: linear-gradient(90deg, rgb(111, 81, 104), violet);
       background-size: 400% 400%;
       z-index: -1;
       filter: blur(2px);
@@ -97,10 +100,29 @@
             left: -5px;
             right: -5px;
             bottom: -5px;
-            background: linear-gradient(90deg, rgb(111, 0, 255), rgb(255, 0, 144), violet);
+            background: linear-gradient(90deg, rgb(196, 164, 132), violet);
             background-size: 400% 400%;
             z-index: -1;
             filter: blur(5px);
             animation: glowing 20s linear infinite;
-            border-radius: 30px; /* Round the glow effect */
+            border-radius: 30px; 
             }
+            .professional-text-title {
+              font-family: 'Poppins', sans-serif;
+              font-weight: 700;
+              font-size: 4.0rem;
+              color: #333;
+              background: linear-gradient(45deg, rgb(196, 164, 132), violet);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              animation: rainbowBackground 3s infinite;
+            }
+
+            .professional-text-subtitle {
+              font-family: 'Poppins', sans-serif;
+              font-weight: 300;
+              font-size: 2rem;
+              color: #626060;
+            }
+
+            

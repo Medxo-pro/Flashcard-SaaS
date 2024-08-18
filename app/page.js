@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <Container maxWidth="100vw"
     sx={{
-      backgroundImage: 'url(background.jpg)', // Add your background image URL
+      backgroundImage: 'url(background1.jpg)', // Add your background image URL
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh', // Ensure the container takes up full viewport height
@@ -51,11 +51,19 @@ export default function Home() {
 
       
       <Box
-        
+        sx={{
+          borderRadius: 2, // Adjust the border radius as needed
+          overflow: 'hidden', // Ensure the rounded corners are applied correctly
+          backgroundColor: 'rgba(135, 62, 113, 0.1)', // Semi-transparent background
+          backdropFilter: 'blur(10px)', // Optional: adds a blur effect to the background
+          boxShadow: 'none', // Remove box shadow if desired
+          position: 'relative',
+        }}
       >
         <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
           <Toolbar>
-            <Typography variant="h6" sx={{ flexGrow: 1 }} className="multicolor-text">
+            <Typography className="professional-text-title" 
+            sx={{ fontSize: { xs: '2rem', sm: '3rem' }, flexGrow: 1 }}>
               Flashcard AI
             </Typography>
             {/* Show login and sign-up buttons when signed out */}
@@ -77,12 +85,10 @@ export default function Home() {
 
 
       <Box sx={{ textAlign: "center", my: 4, mt: 10 }}>
-        <Typography variant="h4" gutterBottom className="multicolor-text" >
+        <Typography variant="h3" gutterBottom className="professional-text-subtitle"  >
           Your intelligent flashcard maker
         </Typography>
-        <Typography variant="h5" gutterBottom className="multicolor-text-small">
-          ~ Make Flashcards using the power of AI! ~
-        </Typography>
+        
         <Button 
         variant="contained" 
         color="primary" 
@@ -106,29 +112,34 @@ export default function Home() {
       <Box sx={{ my: 6, mb: 10, mt: 10 }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom color="rgb(135, 62, 113)">
-              Easy Text Input
-            </Typography>
-            <Typography variant="body1" color="rgb(135, 62, 113)">
-              Simply input your text and let our software do the rest.
-            </Typography>
+            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.1)', p: 3, borderRadius: 2 }}>
+              <Typography variant="h6" gutterBottom color="#626060">
+                Leverage the power of AI
+              </Typography>
+              <Typography variant="body1" color="#626060">
+                Creates flashcards from your text.
+              </Typography>
+            </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom color="rgb(135, 62, 113)">
-              Smart Flashcards
-            </Typography>
-            <Typography variant="body1" color="rgb(135, 62, 113)">
-              Our AI intelligently creates flashcards from your text.
-            </Typography>
+            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.1)', p: 3, borderRadius: 2 }}>
+              <Typography variant="h6" gutterBottom color="#626060">
+                Accessible Anywhere
+              </Typography>
+              <Typography variant="body1" color="#626060">
+                Save your flashcards and access them from any device.
+              </Typography>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={4} color="rgb(135, 62, 113)">
-            <Typography variant="h6" gutterBottom>
-              Accessible Anywhere
-            </Typography>
-            <Typography variant="body1" color="rgb(135, 62, 113)">
-              Save your flashcards to your account and access them from
-              anywhere.
-            </Typography>
+          <Grid item xs={12} md={4}>
+            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.1)', p: 3, borderRadius: 2 }}>
+              <Typography variant="h6" gutterBottom color="#626060">
+                Limited free access
+              </Typography>
+              <Typography variant="body1" color="#626060">
+                Use our services for free!
+              </Typography>
+            </Box>
           </Grid>
         </Grid>
       </Box>
@@ -136,23 +147,23 @@ export default function Home() {
 
 
       <Box sx={{ my: 6, textAlign: "center" }}>
-        <Typography variant="h4" color="white" sx={{mb: 3}}>Pricing</Typography>
+        <Typography variant="h4" className="professional-text-subtitle" sx={{mb: 3}}>Pricing</Typography>
         <Grid container spacing={4}>
 
           <Grid item xs={12} md={6}>
             <Box sx={{ 
-              borderRadius: 2, 
+              borderRadius: 5, 
               p: 2,
               mt: 5,
               backgroundColor: 'transparent',
-              boxShadow: '0px 4px 20px rgba(255, 105, 180, 0.5), 0px 0px 10px rgba(128, 0, 128, 0.3)', }}>
-              <Typography variant="h5" gutterBottom color="white">
+              boxShadow: '0px 4px 20px rgba(135, 62, 113, 0.1), 0px 0px 10px rgba(128, 0, 128, 0.3)', }}>
+              <Typography variant="h5" gutterBottom color="#626060">
                 Basic
               </Typography>
-              <Typography variant="h6" gutterBottom color="white">
+              <Typography variant="h6" gutterBottom color="#626060">
                 $0 / month 
               </Typography>
-              <Typography variant="body1" color="white">
+              <Typography variant="body1" color="#626060">
                 Unlimited Flashcards w/o Storage.
               </Typography>
               <Button 
@@ -173,18 +184,18 @@ export default function Home() {
 
           <Grid item xs={12} md={6}>
             <Box sx={{ 
-              borderRadius: 2, 
+              borderRadius: 5, 
               p: 2, 
               mt: 5,
               backgroundColor: 'transparent',
-              boxShadow: '0px 4px 20px rgba(255, 105, 180, 0.5), 0px 0px 10px rgba(128, 0, 128, 0.3)', }}>
-              <Typography variant="h5" gutterBottom color="white">
+              boxShadow: '0px 4px 20px rgba(135, 62, 113, 0.1), 0px 0px 10px rgba(128, 0, 128, 0.3)', }}>
+              <Typography variant="h5" gutterBottom color="#626060">
                 Pro
               </Typography>
-              <Typography variant="h6" gutterBottom color="white">
+              <Typography variant="h6" gutterBottom color="#626060">
                  <span style={{ textDecoration: 'line-through', marginRight: '1rem' }}> $2.99</span> 0 / month
               </Typography>
-              <Typography variant="body1" color="white">
+              <Typography variant="body1" color="#626060">
                 Unlimited Flashcards and Storage.
               </Typography>
               <Button 

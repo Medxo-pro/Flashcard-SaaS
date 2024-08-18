@@ -98,6 +98,16 @@ export default function Generate() {
   };
 
   return (
+
+    <Container maxWidth="100vw"
+    sx={{
+      backgroundImage: 'url(background1.jpg)', // Add your background image URL
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh', // Ensure the container takes up full viewport height
+      py: 4, // Add padding for spacing
+    }}>
+
     <Container maxWidth="md">
       <Box
         sx={{
@@ -109,8 +119,16 @@ export default function Generate() {
           mb: 6,
         }}
       >
-        <Typography variant="h4">Generate Flashcards</Typography>
-        <Paper sx={{ p: 4, mt: 4, width: "100%"}}>
+        <Typography variant="h4" className="professional-text-subtitle">Generate Flashcards</Typography>
+        <Paper 
+        sx={{ p: 4, mt: 4, width: "100%",
+          backgroundColor: 'rgba(135, 62, 113, 0.1)', // Semi-transparent white
+          borderRadius: 2, // Rounded borders
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Subtle shadow
+
+        }}
+        
+        >
           <TextField
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -119,13 +137,31 @@ export default function Generate() {
             multiline
             rows={4}
             variant="outlined"
-            sx={{ mb: 2 }}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                borderRadius: '20px',
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                '&:hover fieldset': {
+                  borderColor: 'rgba(51, 51, 51, 0.6)',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'rgba(51, 51, 51, 0.6)',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                color: 'rgba(51, 51, 51, 0.6)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#333',
+              },
+            }}
           />
           <Button
             variant="contained"
             color="primary"
             onClick={handleSubmit}
             sx={{ mt: 2 }}
+            className="button glowing-border"
           >
             Generate
           </Button>
@@ -139,7 +175,13 @@ export default function Generate() {
           <Grid container spacing={2}>
             {flashcards.map((flashcard, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
+                <Card
+                  sx={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Semi-transparent background
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  // Subtle shadow
+                    borderRadius: 2,  // Rounded borders
+                  }}
+                >
                   <CardActionArea
                     onClick={() => {
                       handleCardClick(index)
@@ -176,7 +218,10 @@ export default function Generate() {
 
                       '& > div div:nth-of-type(2)':{
                       transform: 'rotateY(180deg)'
-                      }
+                      },
+                      backgroundColor: 'rgba(135, 62, 113, 0.1)', // Semi-transparent white
+                      borderRadius: 2, // Rounded borders
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Subtle shadow
                     }}
                     
                     >
@@ -200,7 +245,19 @@ export default function Generate() {
             ))}
           </Grid>
           <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center'}}>
-            <Button variant='contained' color = 'secondary' onClick={handleOpen}>
+            <Button 
+            variant='contained' 
+            color = 'secondary' 
+            onClick={handleOpen}
+            className="button-feedback glowing-border-feedback"
+              sx={{
+              mt: 2,
+              fontSize: '1em', // Ensure this matches the CSS font-size
+              backgroundColor: 'transparent', // Override default background color
+              border: '2px solid #fff', // Match the CSS border
+              color: '#fff', // Match the CSS text color
+              }}
+            >
               Save 
             </Button>
           </Box>
@@ -230,6 +287,8 @@ export default function Generate() {
         </Button>
       </DialogActions>
     </Dialog>
+    </Container>
+
     </Container>
   );
 }
