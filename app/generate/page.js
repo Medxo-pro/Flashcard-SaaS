@@ -30,12 +30,14 @@ export default function Generate() {
   const [name, setName] = useState("");
   const [open, setOpen] = useState(false);
   const router = useRouter(); //To route between pages 
+  const [numFlashcards, setNumFlashcards] = useState(9);
 
   const handleSubmit = async () => {
     try {
       const res = await fetch("/api/generate", {
         method: "POST",
         body: text,
+        numFlashcards: numFlashcards,
       });
   
       const responseText = await res.text(); // Get response as text for debugging
@@ -156,25 +158,61 @@ export default function Generate() {
               },
             }}
           />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSubmit}
-            sx={{
-              backgroundColor: '#8A7D72',
-              borderRadius: '30px',
-              padding: '10px 20px',
-              textTransform: 'none',
-              '&:hover': {
-                backgroundColor: '#705E52',
-              },
-              mt:2,
-              fontSize: '1em',
-            }} 
-            className="button glowing-border"
-          >
-            Generate
-          </Button>
+    <Box 
+      sx={{ 
+        display: "flex", 
+        alignItems: "center", 
+        mt: 2 
+      }}
+    >
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleSubmit}
+        sx={{
+          backgroundColor: '#8A7D72',
+          borderRadius: '30px',
+          padding: '10px 20px',
+          textTransform: 'none',
+          '&:hover': {
+            backgroundColor: '#705E52',
+          },
+          fontSize: '1em',
+        }} 
+        className="button glowing-border"
+      >
+        Generate
+      </Button>
+      
+      <TextField
+        label="Number of Flashcards..."
+        type="number"
+        inputProps={{ min: 1 }}
+        variant="outlined"
+        value={numFlashcards}
+        onChange={(e) => setNumFlashcards(e.target.value)}
+        sx={{
+          ml: 2, // Add margin-left to create space between the button and the input
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '20px',
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            '&:hover fieldset': {
+              borderColor: 'rgba(51, 51, 51, 0.6)',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: 'rgba(51, 51, 51, 0.6)',
+            },
+          },
+          '& .MuiInputLabel-root': {
+            color: 'rgba(51, 51, 51, 0.6)',
+          },
+          '& .MuiInputBase-input': {
+            color: '#333',
+          },
+          width: '250px' // Adjust width as needed
+        }}
+      />
+    </Box>
         </Paper>
       </Box>
       {flashcards.length > 0 && (

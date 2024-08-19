@@ -86,8 +86,8 @@ export default function Home() {
 
 
 
-      <Box sx={{ textAlign: "center", my: 4, mt: 10 }}>
-        <Typography variant="h3" gutterBottom className="professional-text-subtitle"  >
+      <Box sx={{ textAlign: "center", my: 4, mt: 10}}>
+        <Typography variant="h3" gutterBottom className="professional-text-subtitle" sx={{ mb: 4 }}>
           Your intelligent flashcard maker
         </Typography>
         

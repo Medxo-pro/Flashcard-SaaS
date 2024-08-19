@@ -16,6 +16,7 @@ Both front and back should be one sentence long.
 9. If given a body of text, extract the most important and relevant information for the flashcards.
 10. Aim to create a balanced set of flashcards that covers the topic comprehensively.
 11. Try to make the back of the card as a key word or sets of key words.
+12. Always (for half of the flashcards) add blank spaces like this ____ in the front face of the card to indicate where is the missing key word. The rest can include lomger responses.
 
 You should return in the following JSON format:
 {
