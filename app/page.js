@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <Container maxWidth="100vw"
     sx={{
-      backgroundImage: 'url(background1.jpg)', // Add your background image URL
+      backgroundImage: 'url(background3.jpg)', // Add your background image URL
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh', // Ensure the container takes up full viewport height
@@ -136,31 +136,31 @@ export default function Home() {
       <Box sx={{ my: 6, mb: 10, mt: 10 }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.1)', p: 3, borderRadius: 2 }}>
-              <Typography variant="h6" gutterBottom color="#626060">
+            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.4)', p: 3, borderRadius: 2 }}>
+              <Typography variant="h6" gutterBottom color="rgb(196, 164, 132)">
                 Leverage the power of AI
               </Typography>
-              <Typography variant="body1" color="#626060">
+              <Typography variant="body1" color="rgb(196, 164, 132)">
                 Creates flashcards from your text.
               </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.1)', p: 3, borderRadius: 2 }}>
-              <Typography variant="h6" gutterBottom color="#626060">
+            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.4)', p: 3, borderRadius: 2 }}>
+              <Typography variant="h6" gutterBottom color="rgb(196, 164, 132)">
                 Accessible Anywhere
               </Typography>
-              <Typography variant="body1" color="#626060">
+              <Typography variant="body1" color="rgb(196, 164, 132)">
                 Save your flashcards and access them from any device.
               </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.1)', p: 3, borderRadius: 2 }}>
-              <Typography variant="h6" gutterBottom color="#626060">
+            <Box sx={{ bgcolor: 'rgba(135, 62, 113, 0.4)', p: 3, borderRadius: 2 }}>
+              <Typography variant="h6" gutterBottom color="rgb(196, 164, 132)">
                 Limited free access
               </Typography>
-              <Typography variant="body1" color="#626060">
+              <Typography variant="body1" color="rgb(196, 164, 132)">
                 Use our services for free!
               </Typography>
             </Box>
@@ -181,13 +181,13 @@ export default function Home() {
               mt: 5,
               backgroundColor: 'transparent',
               boxShadow: '0px 4px 20px rgba(135, 62, 113, 0.1), 0px 0px 10px rgba(128, 0, 128, 0.3)', }}>
-              <Typography variant="h5" gutterBottom color="#626060">
+              <Typography variant="h5" gutterBottom color="rgb(196, 164, 132)">
                 Basic
               </Typography>
-              <Typography variant="h6" gutterBottom color="#626060">
+              <Typography variant="h6" gutterBottom color="rgb(196, 164, 132)">
                 $0 / month 
               </Typography>
-              <Typography variant="body1" color="#626060">
+              <Typography variant="body1" color="rgb(196, 164, 132)">
                 Unlimited Flashcards w/o Storage.
               </Typography>
               <Button 
@@ -217,13 +217,13 @@ export default function Home() {
               mt: 5,
               backgroundColor: 'transparent',
               boxShadow: '0px 4px 20px rgba(135, 62, 113, 0.1), 0px 0px 10px rgba(128, 0, 128, 0.3)', }}>
-              <Typography variant="h5" gutterBottom color="#626060">
+              <Typography variant="h5" gutterBottom color="rgb(196, 164, 132)">
                 Pro
               </Typography>
-              <Typography variant="h6" gutterBottom color="#626060">
+              <Typography variant="h6" gutterBottom color="rgb(196, 164, 132)">
                  <span style={{ textDecoration: 'line-through', marginRight: '1rem' }}> $2.99</span> 0 / month
               </Typography>
-              <Typography variant="body1" color="#626060">
+              <Typography variant="body1" color="rgb(196, 164, 132)">
                 Unlimited Flashcards and Storage.
               </Typography>
               <Button 
