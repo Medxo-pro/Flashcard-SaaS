@@ -70,13 +70,14 @@ export default function Flashcard() {
             }}
         >
             <Container maxWidth="md">
+            <Typography variant="h4" className="professional-text-subtitle" sx={{mt: 5}}>Your Flashcards:</Typography>
                 <Grid container spacing={3} sx={{ mt: 4 }}>
                     {flashcards.map((flashcard) => (
                         <Grid item xs={12} sm={6} md={4} key={flashcard.id}>
                             <Card
                                 sx={{
-                                    backgroundColor: 'rgba(135, 62, 113, 0.1)', // Semi-transparent background
-                                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  // Subtle shadow
+                                    backgroundColor: 'rgba(135, 62, 113, 0.2)', // Semi-transparent background
+                                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',  // Subtle shadow
                                     borderRadius: 2,  // Rounded borders
                                     position: 'relative', // Required for positioning delete button
                                 }}

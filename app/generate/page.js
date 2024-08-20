@@ -154,7 +154,7 @@ export default function Generate() {
                 color: 'rgba(51, 51, 51, 0.6)',
               },
               '& .MuiInputBase-input': {
-                color: '#333',
+                color: 'white',
               },
             }}
           />
@@ -207,7 +207,7 @@ export default function Generate() {
             color: 'rgba(51, 51, 51, 0.6)',
           },
           '& .MuiInputBase-input': {
-            color: '#333',
+            color: 'white',
           },
           width: '250px' // Adjust width as needed
         }}
@@ -217,7 +217,7 @@ export default function Generate() {
       </Box>
       {flashcards.length > 0 && (
         <Box sx={{ mt: 4 }}>
-          <Typography variant="h5" component="h2" gutterBottom>
+          <Typography variant="h5" component="h2" gutterBottom color="white">
             Generated Flashcards
           </Typography>
           <Grid container spacing={2}>
@@ -275,12 +275,12 @@ export default function Generate() {
                     >
                       <div>
                         <div>
-                          <Typography variant = 'h5' component = "div" >
+                          <Typography variant = 'h5' component = "div" color="white" >
                             {flashcard.front}
                           </Typography>
                         </div>
                         <div>
-                          <Typography variant = 'h5' component = "div" >
+                          <Typography variant = 'h5' component = "div" color="white">
                             {flashcard.back}
                           </Typography>
                         </div>

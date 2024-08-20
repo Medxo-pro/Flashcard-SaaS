@@ -119,12 +119,12 @@ export default function Flashcard() {
                     >
                       <div>
                         <div>
-                          <Typography variant = 'h5' component = "div" >
+                          <Typography variant = 'h5' component = "div" color ="white">
                             {flashcard.front}
                           </Typography>
                         </div>
                         <div>
-                          <Typography variant = 'h5' component = "div" >
+                          <Typography variant = 'h5' component = "div" color ="white">
                             {flashcard.back}
                           </Typography>
                         </div>
