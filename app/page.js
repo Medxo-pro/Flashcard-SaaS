@@ -207,8 +207,10 @@ export default function Home() {
                 },
                 fontSize: '1em',
                 mt: 2
-              }}  >
-                href="/generate"
+              }}  
+              href="/generate"
+              >
+                
                 Get Basic
               </Button>
             </Box>
