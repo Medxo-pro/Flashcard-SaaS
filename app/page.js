@@ -90,6 +90,9 @@ export default function Home() {
         <Typography variant="h3" gutterBottom className="professional-text-subtitle" sx={{ mb: 4 }}>
           Your intelligent flashcard maker
         </Typography>
+        <Typography variant="h6" gutterBottom color="white" sx={{ mb: 3 }}>
+        ⚡️ Join the <strong>26</strong> people already using the app! ⚡️
+        </Typography>
         
         <Button 
         variant="contained" 

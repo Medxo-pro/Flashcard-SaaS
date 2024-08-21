@@ -6,7 +6,7 @@ export default function SignInPage() {
   return (
     <Container maxWidth="100vw"
     sx={{
-      backgroundImage: 'url(background1.jpg)', // Add your background image URL
+      backgroundImage: 'url(background3.jpg)', // Add your background image URL
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh', // Ensure the container takes up full viewport height
