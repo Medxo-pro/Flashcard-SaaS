@@ -62,6 +62,7 @@ export default function Generate() {
     setOpen(false);
   };
 
+
   const saveFlashcards = async () => {
     if (!name) {
       alert("Please enter a name.");
@@ -336,6 +337,9 @@ export default function Generate() {
         <Button onClick={handleClose}>Cancel</Button>
         <Button onClick={saveFlashcards} color="primary">
           Save
+        </Button>
+        <Button href="/sign-up" color="primary">
+          Your account 
         </Button>
       </DialogActions>
     </Dialog>

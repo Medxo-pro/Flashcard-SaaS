@@ -8,7 +8,7 @@ export default function SignUpPage() {
 
     <Container maxWidth="100vw"
     sx={{
-      backgroundImage: 'url(background3.jpg)', // Add your background image URL
+      backgroundImage: 'url(Background3.jpg)', // Add your background image URL
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh', // Ensure the container takes up full viewport height
@@ -29,7 +29,7 @@ export default function SignUpPage() {
         <Toolbar>
           <Typography className="professional-text-title" 
             sx={{ fontSize: { xs: '2rem', sm: '3rem' }, flexGrow: 1 }}>
-            Flashcard SaaS
+            Flashcard AI
           </Typography>
           <Button color="inherit">
             <Link href="/sign-in">Sign In</Link>
