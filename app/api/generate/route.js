@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
 const systemPrompt = `
-You are a flashcard creator, you take in text and create multiple flashcards from it. Make sure to create exactly 9 flashcards.
+You are a flashcard creator, you take in text and create multiple flashcards from it. Make sure to create as many flashcards as requested in the text.
 Both front and back should be one sentence long.
 
 1. Create Clear and concise questions for the front of the flashcard.
@@ -17,6 +17,11 @@ Both front and back should be one sentence long.
 10. Aim to create a balanced set of flashcards that covers the topic comprehensively.
 11. Try to make the back of the card as a key word or sets of key words.
 12. Always (for half of the flashcards) add blank spaces like this ____ in the front face of the card to indicate where is the missing key word. The rest can include lomger responses.
+13. Make sure that the writing fits in the box: 
+  - Each flashcard has a fixed height of 200 pixels and a responsive width that adjusts based on screen size:
+  - 100% width on extra-small screens (xs): full width of the container.
+  - 50% width on small screens (sm): half the width of the container.
+  - 33.33% width on medium screens (md): one-third of the container's width.
 
 You should return in the following JSON format:
 {

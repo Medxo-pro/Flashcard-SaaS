@@ -44,6 +44,8 @@ export default function Home() {
       backgroundPosition: 'center',
       minHeight: '100vh', // Ensure the container takes up full viewport height
       py: 4, // Add padding for spacing
+      backgroundColor: 'black',
+      overflow: 'hidden', 
     }}>
       <Head>
         <title >Flashcard SaaS</title>

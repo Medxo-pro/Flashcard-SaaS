@@ -24,6 +24,7 @@ import DialogActions from '@mui/material/DialogActions';
 
 export default function Generate() {
   const { isLoaded, isSignedIn, user } = useUser();
+  const [isLoading, setIsLoading] = useState(false)
   const [flashcards, setFlashcards] = useState([]);
   const [flipped, setFlipped] = useState({});
   const [text, setText] = useState("");
@@ -33,11 +34,15 @@ export default function Generate() {
   const [numFlashcards, setNumFlashcards] = useState(9);
 
   const handleSubmit = async () => {
+    if (!text.trim() || isLoading) return;
+      setIsLoading(true)
+
+    const num = "Number of flashcards: "+numFlashcards
+    const combinedString = text + num;
     try {
       const res = await fetch("/api/generate", {
         method: "POST",
-        body: text,
-        numFlashcards: numFlashcards,
+        body: combinedString,
       });
   
       const responseText = await res.text(); // Get response as text for debugging
@@ -48,6 +53,7 @@ export default function Generate() {
     } catch (error) {
       console.error("Error parsing response:", error);
     }
+    setIsLoading(false)
   };
 
   const handleCardClick = (id) => {
@@ -170,6 +176,7 @@ export default function Generate() {
         variant="contained"
         color="primary"
         onClick={handleSubmit}
+        disabled={isLoading}
         sx={{
           backgroundColor: '#8A7D72',
           borderRadius: '30px',
@@ -182,7 +189,7 @@ export default function Generate() {
         }} 
         className="button glowing-border"
       >
-        Generate
+        {isLoading ? 'Generating...' : 'Generate'}
       </Button>
       
       <TextField
@@ -197,20 +204,26 @@ export default function Generate() {
           '& .MuiOutlinedInput-root': {
             borderRadius: '20px',
             backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            '& fieldset': {
+              borderColor: 'rgba(51, 51, 51, 0.6)', // Default border color
+            },
             '&:hover fieldset': {
-              borderColor: 'rgba(51, 51, 51, 0.6)',
+              borderColor: 'rgba(51, 51, 51, 0.6)', // Border color on hover
             },
             '&.Mui-focused fieldset': {
-              borderColor: 'rgba(51, 51, 51, 0.6)',
+              borderColor: 'rgba(51, 51, 51, 0.6)', // Border color when focused
             },
           },
           '& .MuiInputLabel-root': {
-            color: 'rgba(51, 51, 51, 0.6)',
+            color: 'rgba(51, 51, 51, 0.6)', // Default label color
+            '&.Mui-focused': {
+              color: 'rgba(51, 51, 51, 0.6)', // Label color when focused
+            },
           },
           '& .MuiInputBase-input': {
-            color: 'white',
+            color: 'white', // Input text color
           },
-          width: '250px' // Adjust width as needed
+          width: '250px', // Adjust width as needed
         }}
       />
     </Box>
