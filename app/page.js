@@ -93,7 +93,7 @@ export default function Home() {
           Your intelligent flashcard maker
         </Typography>
         <Typography variant="h6" gutterBottom color="white" sx={{ mb: 3 }}>
-        ⚡️ Join the <strong>39</strong> people already using the app! ⚡️
+        ⚡️ Join the <strong>40</strong> people already using the app! ⚡️
         </Typography>
         
         <Button 
